@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Service Update</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -18,7 +17,7 @@
 
     body {
       height: 100vh;
-      background: linear-gradient(135deg, #0f172a, #1e293b);
+      background: linear-gradient(135deg, #0f172a, #020617);
       color: #f1f5f9;
       display: flex;
       align-items: center;
@@ -27,15 +26,15 @@
     }
 
     .container {
-      max-width: 700px;
+      max-width: 720px;
       width: 100%;
       text-align: center;
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(18px);
       background: rgba(255, 255, 255, 0.05);
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 20px;
       padding: 40px 30px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
     }
 
     h1 {
@@ -47,7 +46,7 @@
     p {
       font-size: 1rem;
       color: #cbd5f5;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       line-height: 1.6;
     }
 
@@ -61,12 +60,13 @@
       border-radius: 16px;
       padding: 20px;
       text-align: left;
-      transition: 0.3s ease;
+      margin-bottom: 25px;
       border: 1px solid rgba(255,255,255,0.1);
+      transition: 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
       background: rgba(255,255,255,0.12);
     }
 
@@ -85,7 +85,7 @@
       display: inline-block;
       padding: 10px 18px;
       background: #38bdf8;
-      color: #0f172a;
+      color: #020617;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 500;
@@ -94,6 +94,47 @@
 
     .btn:hover {
       background: #0ea5e9;
+    }
+
+    form {
+      margin-top: 20px;
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+    }
+
+    input {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+    }
+
+    input::placeholder {
+      color: #94a3b8;
+    }
+
+    .submit-btn {
+      background: #22c55e;
+      color: #020617;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .submit-btn:hover {
+      background: #16a34a;
+    }
+
+    .linkedin {
+      margin-top: 20px;
+    }
+
+    .linkedin a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 500;
     }
 
     footer {
@@ -112,30 +153,46 @@
 
 <body>
   <div class="container">
-    
-    <h1>🚫 Jitsi Meet Service Unavailable</h1>
+
+    <h1>🚫 Jitsi Meet Service Update</h1>
 
     <p>
-      The Jitsi Meet instance hosted here has been 
-      <span class="highlight">taken down</span> due to upfront infrastructure costs.
+      This Jitsi Meet instance was part of an 
+      <span class="highlight">experimental self-hosted infrastructure project</span>.
       <br><br>
-      Thank you for using the service 🙏
+      As maintaining the service incurs ongoing server costs, it has been taken down for now.
     </p>
 
-    <!-- Medium Article Card -->
+    <!-- Medium Card -->
     <div class="card">
-      <h3>📖 How I Self-Hosted Jitsi Meet on AWS</h3>
+      <h3>📖 Full Setup & Architecture</h3>
       <p>
-        Learn the complete step-by-step setup including EC2 configuration,
-        ports, Docker setup, and domain configuration.
+        Learn how I deployed Jitsi Meet on AWS (EC2, ports, Docker, domain setup, and more).
       </p>
       <a href="https://medium.com/@prasadcpatil246/self-hosting-jitsi-meet-with-docker-nginx-ssl-a-complete-devops-guide-9c3b24c3c848" target="_blank" class="btn">
-        Read Full Article →
+        Read Article →
+      </a>
+    </div>
+
+    <!-- Email Form (Netlify Forms) -->
+    <form name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
+
+      <input type="email" name="email" placeholder="Enter your email for updates" required />
+      <input type="submit" value="Notify Me" class="submit-btn" />
+    </form>
+
+    <!-- LinkedIn CTA -->
+    <div class="linkedin">
+      💬 Have questions or want help with setup?  
+      <br>
+      👉 <a href="https://www.linkedin.com/in/prasad-zungare/" target="_blank">
+        DM me on LinkedIn
       </a>
     </div>
 
     <footer>
-      Built with ❤️ | DevOps Journey
+      Built with ❤️ | DevOps Experiments
     </footer>
 
   </div>
